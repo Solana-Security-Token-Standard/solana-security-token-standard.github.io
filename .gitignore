@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+
+# Archived legacy/template content
+temp/
+
+# Legacy Jekyll artifacts
+_site/
+.jekyll-cache/
+.sass-cache/
+
+.DS_Store

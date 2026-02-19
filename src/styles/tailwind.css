@@ -1,0 +1,145 @@
+@import 'tailwindcss';
+@import './prism.css';
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5rem;
+  --text-base: 1rem;
+  --text-base--line-height: 2rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2.5rem;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 2.5rem;
+  --text-4xl: 2.5rem;
+  --text-4xl--line-height: 3rem;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 3.5rem;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --text-8xl: 6rem;
+  --text-8xl--line-height: 1;
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 1;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-lexend);
+  --font-display--font-feature-settings: 'ss01';
+
+  --color-sky-50: #ecf9f9;
+  --color-sky-300: #6ed6d6;
+  --color-sky-400: #34c4c4;
+  --color-sky-500: #00a8a8;
+  --color-sky-600: #008f8f;
+  --color-sky-700: #007272;
+  --color-sky-800: #005c5c;
+
+  --color-indigo-400: #2a2d6e;
+  --color-cyan-400: #00a8a8;
+
+  --container-8xl: 88rem;
+}
+
+@layer base {
+  :root {
+    --ssts-indigo: #2a2d6e;
+    --ssts-teal: #00a8a8;
+    --ssts-soft-gray: #e0e0e0;
+    --ssts-dark: #333333;
+    --ssts-accent: #ff6b6b;
+  }
+
+  [inert] ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .prose :where(:not(pre) > code):not(:where(.not-prose *)) {
+    border-radius: 0.375rem;
+    background-color: var(--color-slate-100);
+    padding: 0.125rem 0.375rem;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--color-slate-800);
+  }
+
+  .prose :where(:not(pre) > code):not(:where(.not-prose *))::before,
+  .prose :where(:not(pre) > code):not(:where(.not-prose *))::after {
+    content: none;
+  }
+
+  .dark .prose :where(:not(pre) > code):not(:where(.not-prose *)) {
+    background-color: var(--color-slate-800);
+    color: var(--color-slate-200);
+  }
+
+  .mermaid-diagram svg {
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .mermaid-diagram .edgePath .path,
+  .mermaid-diagram .flowchart-link,
+  .mermaid-diagram .edge-thickness-normal,
+  .mermaid-diagram .edge-thickness-thick,
+  .mermaid-diagram .edge-pattern-solid,
+  .mermaid-diagram .edge-pattern-dashed,
+  .mermaid-diagram .edge-pattern-dotted,
+  .mermaid-diagram .loopLine,
+  .mermaid-diagram .separator,
+  .mermaid-diagram .labelBox,
+  .mermaid-diagram .messageLine0,
+  .mermaid-diagram .messageLine1,
+  .mermaid-diagram .actor-line {
+    stroke: #2a2d6e !important;
+  }
+
+  .dark .mermaid-diagram .edgePath .path,
+  .dark .mermaid-diagram .flowchart-link,
+  .dark .mermaid-diagram .edge-thickness-normal,
+  .dark .mermaid-diagram .edge-thickness-thick,
+  .dark .mermaid-diagram .edge-pattern-solid,
+  .dark .mermaid-diagram .edge-pattern-dashed,
+  .dark .mermaid-diagram .edge-pattern-dotted,
+  .dark .mermaid-diagram .loopLine,
+  .dark .mermaid-diagram .separator,
+  .dark .mermaid-diagram .labelBox,
+  .dark .mermaid-diagram .messageLine0,
+  .dark .mermaid-diagram .messageLine1,
+  .dark .mermaid-diagram .actor-line {
+    stroke: #94a3b8 !important;
+  }
+
+  .mermaid-diagram .marker path {
+    fill: #2a2d6e !important;
+    stroke: #2a2d6e !important;
+  }
+
+  .dark .mermaid-diagram .marker path {
+    fill: #94a3b8 !important;
+    stroke: #94a3b8 !important;
+  }
+}
+
+@layer utilities {
+  .prose
+    :where(code):not(:where(pre code, .not-prose *, [class~='not-prose'] *))::before,
+  .prose
+    :where(code):not(:where(pre code, .not-prose *, [class~='not-prose'] *))::after {
+    content: none !important;
+  }
+}
