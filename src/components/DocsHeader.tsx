@@ -3,11 +3,12 @@
 import { usePathname } from 'next/navigation'
 
 import { navigation } from '@/lib/navigation'
+import { pathsMatch } from '@/lib/pathname'
 
 export function DocsHeader({ title }: { title?: string }) {
   let pathname = usePathname()
   let section = navigation.find((section) =>
-    section.links.find((link) => link.href === pathname),
+    section.links.find((link) => pathsMatch(link.href, pathname)),
   )
 
   if (!title && !section) {

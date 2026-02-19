@@ -32,12 +32,18 @@ Then put the deployed verifier ID in `config/program-ids.json` for your cluster.
 
 ## 2) Minimal program-id config
 
+Use the core ID registry in this docs repo as the source of truth:
+
+{% program-ids /%}
+
+In the issuer repo (`ssts-example`), set `config/program-ids.json` by adding your verifier program ID for the same cluster:
+
 ```json
 {
   "devnet": {
-    "securityTokenProgram": "SSTS8Qk2bW3aVaBEsY1Ras95YdbaaYQQx21JWHxvjap",
-    "transferHookProgram": "HookXqLKgPaNrHBJ9Jui7oQZz93vMbtA88JjsLa8bmfL",
-    "transferWhitelistProgram": "YourVerifierProgramId"
+    "securityTokenProgram": "<core security token program id>",
+    "transferHookProgram": "<core transfer hook program id>",
+    "transferWhitelistProgram": "<your deployed verifier program id>"
   }
 }
 ```
@@ -58,6 +64,8 @@ import {
   setTransactionMessageLifetimeUsingBlockhash,
   signTransactionMessageWithSigners,
 } from "@solana/kit"
+import fs from "node:fs"
+import path from "node:path"
 
 import {
   getInitializeMintInstruction,
@@ -73,7 +81,33 @@ const INSTRUCTION_DISCRIMINATORS = { mint: 6, transfer: 12 } as const
 const INSTRUCTIONS_SYSVAR = address("Sysvar1nstructions1111111111111111111111111")
 const TOKEN_2022_PROGRAM = address("TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb")
 
-// Inputs: payer signer, mint signer, program IDs, and all required PDAs.
+type Cluster = "localnet" | "devnet" | "testnet" | "mainnet"
+type ProgramIds = {
+  securityTokenProgram: string | null
+  transferHookProgram: string | null
+  transferWhitelistProgram: string | null
+}
+
+const cluster = (process.env.CLUSTER ?? "devnet") as Cluster
+const configPath = path.resolve("config/program-ids.json")
+const allProgramIds = JSON.parse(
+  fs.readFileSync(configPath, "utf8"),
+) as Record<Cluster, ProgramIds>
+const programIds = allProgramIds[cluster]
+
+if (
+  !programIds?.securityTokenProgram ||
+  !programIds.transferHookProgram ||
+  !programIds.transferWhitelistProgram
+) {
+  throw new Error(`Missing one or more program IDs for ${cluster} in ${configPath}`)
+}
+
+const securityTokenProgramId = address(programIds.securityTokenProgram)
+const transferHookProgramId = address(programIds.transferHookProgram)
+const verifierProgramId = address(programIds.transferWhitelistProgram)
+
+// Inputs: payer signer, mint signer, and required PDAs.
 // PDA derivation is the same as in scripts/issuer-setup.ts.
 
 const initMintIx = getInitializeMintInstruction(

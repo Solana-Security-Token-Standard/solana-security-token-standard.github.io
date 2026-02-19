@@ -5,16 +5,24 @@ import { Highlight } from 'prism-react-renderer'
 
 import { Button } from '@/components/Button'
 import { HeroBackground } from '@/components/HeroBackground'
+import programIds from '@/data/program-ids.json'
 import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
 
 const codeLanguage = 'json'
-const code = `{
-  "devnet": {
-    "securityTokenProgram": "SSTS8Qk2...",
-    "transferHookProgram": "HookXqL..."
-  }
-}`
+const shortenAddress = (value: string | null) =>
+  value ? `${value.slice(0, 8)}...${value.slice(-6)}` : null
+
+const code = JSON.stringify(
+  {
+    devnet: {
+      securityTokenProgram: shortenAddress(programIds.devnet.securityTokenProgram),
+      transferHookProgram: shortenAddress(programIds.devnet.transferHookProgram),
+    },
+  },
+  null,
+  2,
+)
 
 const tabs = [
   { name: 'config/program-ids.json', isActive: true },
