@@ -66,10 +66,11 @@ export function Hero() {
               <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                 <Button href="/docs/governance">Get started</Button>
                 <Button
-                  href="https://github.com/Solana-Security-Token-Standard/solana-security-token-standard"
+                  href="https://github.com/Solana-Security-Token-Standard"
                   variant="secondary"
+                  target='_blank'
                 >
-                  View core repo
+                  View on GitHub
                 </Button>
               </div>
             </div>
