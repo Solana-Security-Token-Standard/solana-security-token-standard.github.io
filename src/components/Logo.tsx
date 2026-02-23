@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import clsx from 'clsx'
 
 type LogoProps = {
   className?: string
@@ -11,7 +12,7 @@ export function Logomark({ className }: LogoProps) {
       alt=""
       width={536}
       height={145}
-      className={className}
+      className={clsx(className, 'dark:brightness-0 dark:invert')}
       priority
     />
   )
@@ -24,7 +25,7 @@ export function Logo({ className }: LogoProps) {
       alt=""
       width={536}
       height={145}
-      className={className}
+      className={clsx(className, 'dark:brightness-0 dark:invert')}
       priority
     />
   )
