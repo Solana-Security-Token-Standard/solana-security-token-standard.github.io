@@ -1,6 +1,7 @@
 import { Callout } from '@/components/Callout'
 import { ProgramIdsBlock } from '@/components/ProgramIds'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
+import { VerificationEvidenceBlock } from '@/components/VerificationEvidence'
 
 const tags = {
   callout: {
@@ -46,6 +47,13 @@ const tags = {
   'program-ids': {
     selfClosing: true,
     render: ProgramIdsBlock,
+  },
+  'verification-evidence': {
+    selfClosing: true,
+    render: VerificationEvidenceBlock,
+    attributes: {
+      network: { type: String, default: 'devnet' },
+    },
   },
 }
 

@@ -42,6 +42,12 @@ in the issuer token projects:
 
 {% program-ids /%}
 
+## Verify genuine core programs (devnet)
+
+Use this to independently verify that the deployed core programs are genuine.
+
+{% verification-evidence network="devnet" /%}
+
 {% callout title="Status" %}
 Core standard contracts are foundation-managed. Issuer and integrator teams generally work at the configuration and policy layer.
 {% /callout %}
