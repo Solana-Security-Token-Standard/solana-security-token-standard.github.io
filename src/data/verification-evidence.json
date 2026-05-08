@@ -1,19 +1,19 @@
 {
   "devnet": {
-    "lastUpdated": "2026-03-09",
+    "lastUpdated": "2026-05-08",
     "rpcUrl": "https://api.devnet.solana.com",
-    "repoUrl": "https://github.com/Halborn/solana-security-token-standard",
-    "commitHash": "1ab607e149882e995663ee529bbdb7e8391fe003",
+    "repoUrl": "https://github.com/Solana-Security-Token-Standard/solana-security-token-standard",
+    "commitHash": "83f538492ae1a5af48a9d7495015b35e5864ca6f",
     "programs": {
       "securityTokenProgram": {
-        "expectedProgramHash": "735f1e2d46775b40b31de98eba9a8e4f8916bd616c1b2baed73c1ecaf8cc2ca0",
-        "deployTx": "2EQEELtq5LsrqHF9tsLF1QwTvETqe4wjpdQsELKmteDG7FbhgCDXA8UPJmHMTDCyA5BZzhoUVf7fh7icMZyoKUM4",
-        "verifyUploadTx": "3ztUtTkEtPMnkXPeDMfzgUPYD7YiTduT633LdU88nnjUeYyFATpDbu1f9Zv3EEyEoTG2mpuWTUaLTiMY79KFt3xn"
+        "expectedProgramHash": "577dc63f551eabde04a9d9ebbbf441fb7106e2685839dbb3c779849ddf9e20f5",
+        "deployTx": "3DPxA7pMQtDnpBWKyTXg9F82vCXgLdyUyeqgtkB6DoWQho2PaVR3v72oAEBNQ6Dex4mfoW8AY42erm36dVEn6xsy",
+        "verifyUploadTx": "2m59Ld6VRCYp6ji3rYec6iTECwz7bQpsq1VxbFf15puVUt26TSVEW8GaUgi7hHvNF4N2w27Xf9XqH7FghGtx5fuz"
       },
       "transferHookProgram": {
         "expectedProgramHash": "1a2a956050c9f51793698d7b5aeaf72be04c9b85eef03b4333d2b4a77c687a39",
-        "deployTx": "33ncsTCTkfasHgfvpe1sBorc3bnpHp5xh6DASJyG7wrn35KFhKcKXgvsFhSh4sVxFAvp7tVZiBuUu4zRPtDdhmPP",
-        "verifyUploadTx": "xn8wbHXi2kSg7S3edtQXmBFDoNcrxuD9YoVTiG1vXumhKDK7egL4JYHXWhzuGznzHxXUhDeow5w2K5xA31gYrkQ"
+        "deployTx": "62b1SSxEtNKzne5NptGW7MFDgaEFV9bXg1EsUeEcgZjgqspnyTZAwGRVja1LJsuiDvGcUE565jMh8JSfosgCFRgL",
+        "verifyUploadTx": "4cSD9zEKBg1pHiVxo93pVKbLFcqc3B7kcfLt27cuiSv5Uug5hZ9MWdPxvziTKjgodCeYwm5Xh2cSFvwSftTswyGn"
       }
     }
   }
