@@ -132,6 +132,7 @@ const initMintIx = getInitializeMintInstruction(
         additionalMetadata: new Uint8Array(),
       },
       ixScaledUiAmount: null,
+      ixDefaultAccountState: null,
     },
   },
   { programAddress: securityTokenProgramId },

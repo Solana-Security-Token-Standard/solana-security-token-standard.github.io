@@ -8,7 +8,7 @@ The core API surface is defined by the Security Token Program instruction set.
 
 | Group | Representative instructions |
 | --- | --- |
-| Mint and metadata | `InitializeMint`, `UpdateMetadata` |
+| Mint and metadata | `InitializeMint`, `UpdateMetadata`, `UpdateDefaultAccountState` |
 | Verification config | `InitializeVerificationConfig`, `UpdateVerificationConfig`, `TrimVerificationConfig` |
 | Token lifecycle | `Mint`, `Burn`, `Transfer`, `Pause`, `Resume`, `Freeze`, `Thaw` |
 | Corporate actions | `CreateRateAccount`, `Split`, `Convert`, `CreateDistributionEscrow`, `ClaimDistribution` |

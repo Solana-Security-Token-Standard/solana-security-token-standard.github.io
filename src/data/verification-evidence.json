@@ -1,19 +1,19 @@
 {
   "devnet": {
-    "lastUpdated": "2026-05-08",
+    "lastUpdated": "2026-05-21",
     "rpcUrl": "https://api.devnet.solana.com",
     "repoUrl": "https://github.com/Solana-Security-Token-Standard/solana-security-token-standard",
-    "commitHash": "83f538492ae1a5af48a9d7495015b35e5864ca6f",
+    "commitHash": "166b0d54bdcddf5ee93f5c80157a12dd497f1a1e",
     "programs": {
       "securityTokenProgram": {
-        "expectedProgramHash": "577dc63f551eabde04a9d9ebbbf441fb7106e2685839dbb3c779849ddf9e20f5",
-        "deployTx": "3DPxA7pMQtDnpBWKyTXg9F82vCXgLdyUyeqgtkB6DoWQho2PaVR3v72oAEBNQ6Dex4mfoW8AY42erm36dVEn6xsy",
-        "verifyUploadTx": "2m59Ld6VRCYp6ji3rYec6iTECwz7bQpsq1VxbFf15puVUt26TSVEW8GaUgi7hHvNF4N2w27Xf9XqH7FghGtx5fuz"
+        "expectedProgramHash": "9564592c40b0aa4330f839d97f966b2aeacfe514b1d2e587e353c6a720e8508b",
+        "deployTx": "2ak5sF4ZaiHjBJpzmatNuSqEBdRSkaQ3D159VWkHWs7waEA1JPiqaZec7YfLyw9i5bPc9K2b36QARddnHTphqZxq",
+        "verifyUploadTx": "3yA9TKWEQMTVSXZ6d7Qk8Xugpch6ZGVxPMdfDKCBhg9GdaaJiXR97L8hymRiDwPEzJBYDy16mBwmSB2MmQAPGEAP"
       },
       "transferHookProgram": {
-        "expectedProgramHash": "1a2a956050c9f51793698d7b5aeaf72be04c9b85eef03b4333d2b4a77c687a39",
-        "deployTx": "62b1SSxEtNKzne5NptGW7MFDgaEFV9bXg1EsUeEcgZjgqspnyTZAwGRVja1LJsuiDvGcUE565jMh8JSfosgCFRgL",
-        "verifyUploadTx": "4cSD9zEKBg1pHiVxo93pVKbLFcqc3B7kcfLt27cuiSv5Uug5hZ9MWdPxvziTKjgodCeYwm5Xh2cSFvwSftTswyGn"
+        "expectedProgramHash": "f9b73af2b10a194355f6591e0139996d89389ac93cf91f1e3df747a41dc7c7a2",
+        "deployTx": "4cUHUWvEMsNMPTSYvsNT6GKottrP9aMFzBEWHDpWoLKZjaja3rBJ3y8BobspdyGprQTEm7LxMShSviV8Pcbmho82",
+        "verifyUploadTx": "3Ueo9h1gYceSVdxVevMo9VaQ8ncM6A9CDQA9rgPH9vTCgAqnPPT81Nw3N6p2QMKoU92SxRehds5ZzyLCP8nbnHSN"
       }
     }
   }
